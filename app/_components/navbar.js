@@ -13,7 +13,7 @@ export default function Navbar() {
                     width={65}
                     alt="berry logo">
                 </Image>
-                <h2 className={styles.title}>Liberry</h2>
+                <h2 className={styles.title}>LiBerry</h2>
             </Link>
         </div>
     );
