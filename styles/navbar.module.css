@@ -2,8 +2,7 @@
     width: 100%;
     background-color: #fff;
     padding: 10px;
-    /* position: fixed; */
-  }
+}
 
 .title {
     color: #42658a;
@@ -23,14 +22,32 @@ h1.title {
 
 .leftNav {
     background-color: #fff;
-    border: 2px solid cyan;
     display: inline-block;
     height: 100%;
-    width: 20%;
+    width: 15%;
     position: fixed;
     margin-top: -10px;
     left: 0;
     z-index: 0;
     color: #42658a;
-    padding:35px 20px;
+    padding-top: 20px;
+}
+
+.leftNav h2 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.menuItem {
+    padding: 10px 40px;
+    /* width: 100%; */
+}
+
+.menuItem a {
+    font-size: 1.2em;
+    margin-top:15px;
+}
+
+.menuItem:hover {
+    background-color: #DDDDDD;
 }
