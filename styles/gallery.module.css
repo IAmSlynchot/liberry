@@ -1,0 +1,22 @@
+.galleryContainer {
+    padding-top: 15px;
+}
+
+.photoWrapper {
+    width: 25%;
+    height: auto;
+    display: inline-block;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.galleryPhoto {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+
+.galleryPhoto:hover {
+    box-shadow: 10px 10px 5px #888888;
+}

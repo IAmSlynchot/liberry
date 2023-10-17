@@ -1,7 +1,8 @@
-.container {
+.topNavContainer {
     width: 100%;
     background-color: #fff;
     padding: 10px;
+    position: fixed;
 }
 
 .title {
@@ -26,8 +27,8 @@ h1.title {
     height: 100%;
     width: 15%;
     position: fixed;
-    margin-top: -10px;
     left: 0;
+    top: 80px;
     z-index: 0;
     color: #42658a;
     padding-top: 20px;
