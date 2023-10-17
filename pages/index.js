@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/navbar';
-import LeftNav from '../components/left-nav'
+import LeftNav from '../components/left-nav';
 import { getCuratedPhotos, getQueryPhotos } from '../lib/api';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,9 +19,18 @@ export default function Home({ children, data }) {
         <main>
             <LeftNav />
             <h1 className="pageTitle">Welcome to LiBerry!!</h1>
-            <div>
+            <Gallery photoData={photos} />
+            <Link href="about">About</Link>
+        </main>
+      </>
+  )
+}
+
+function Gallery({ photoData }) {
+    return (
+        <div>
             {
-                photos.map((pic) => (
+                photoData.map((pic) => (
                     <div key={pic.id}>
                         <Image 
                         src={pic.src.medium} 
@@ -31,11 +40,8 @@ export default function Home({ children, data }) {
                     </div>
                 ))
             }
-            </div>
-            <Link href="about">About</Link>
-        </main>
-      </>
-  )
+        </div> 
+    );
 }
 
 export async function getServerSideProps() {
