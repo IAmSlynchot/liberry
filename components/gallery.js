@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '../styles/gallery.module.css';
 
 
-export default class Gallery extends React.Component {
+class Gallery extends React.Component {
     constructor(props) {
         super(props);
 
@@ -17,15 +17,19 @@ export default class Gallery extends React.Component {
     }
 
     toggleInfoPanel() {
-        this.setState(state => {
+        this.setState(state => ({
             infoPanelVisible: !state.infoPanelVisible
-        });
+        }));
     }
 
     render() {
         return (
             <div className={styles.galleryContainer}> 
-                {this.state.infoPanelVisible ? <InfoPanel /> : null}
+                {/* {this.state.infoPanelVisible ? <InfoPanel /> : null} */}
+                <InfoPanel 
+                visibility={this.state.infoPanelVisible} 
+                toggle={this.toggleInfoPanel} 
+                />
                 { this.state.photos.map((pic) => (
                     <div className={styles.photoWrapper} key={pic.id}>
                         <Image
@@ -33,10 +37,14 @@ export default class Gallery extends React.Component {
                         src={pic.src.portrait} 
                         width="400" 
                         height="600"
-                        alt={pic.url}  />
+                        alt={pic.url}
+                        onClick={this.toggleInfoPanel}
+                        />
                     </div>
                 ))} 
             </div> 
         );
     }
 }
+
+export default Gallery;
