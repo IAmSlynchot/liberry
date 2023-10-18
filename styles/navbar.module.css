@@ -6,7 +6,7 @@
 }
 
 .title {
-    color: #42658a;
+    color: #70566D;
     display: inline-block;
     margin-left: 5px;
     font-size: 36px;
@@ -30,7 +30,7 @@ h1.title {
     left: 0;
     top: 80px;
     z-index: 0;
-    color: #42658a;
+    color: #70566D;
     padding-top: 20px;
 }
 
