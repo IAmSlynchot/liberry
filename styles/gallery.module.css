@@ -23,9 +23,9 @@
 
 .infoPanel {
     width: 30%;
-    height: 30%;
+    height: 50%;
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 35%;
     background-color: #fff;
     z-index: 2;
@@ -34,6 +34,11 @@
 
 .infoPanel h2 {
     color: #70566D;
+    font-size: 1.6em;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .overlay {

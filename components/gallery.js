@@ -10,16 +10,33 @@ class Gallery extends React.Component {
 
         this.state = {
             infoPanelVisible: false,
-            photos: props.photoData 
+            photos: props.photoData,
+            selectedPhotoInfo: {}
         }
 
         this.toggleInfoPanel = this.toggleInfoPanel.bind(this);
+        this.openInfoPanel = this.openInfoPanel.bind(this);
+        this.closeInfoPanel = this.closeInfoPanel.bind(this);
     }
 
-    toggleInfoPanel() {
+    toggleInfoPanel(photoData) {
         this.setState(state => ({
-            infoPanelVisible: !state.infoPanelVisible
+            infoPanelVisible: !state.infoPanelVisible,
+            selectedPhotoInfo: photoData
         }));
+    }
+
+    openInfoPanel(photoData) {
+        this.setState({
+            infoPanelVisible: true,
+            selectedPhotoInfo: photoData
+        });
+    }
+
+    closeInfoPanel() {
+        this.setState({
+            infoPanelVisible: false
+        });
     }
 
     render() {
@@ -28,7 +45,8 @@ class Gallery extends React.Component {
                 {/* {this.state.infoPanelVisible ? <InfoPanel /> : null} */}
                 <InfoPanel 
                 visibility={this.state.infoPanelVisible} 
-                toggle={this.toggleInfoPanel} 
+                toggle={this.closeInfoPanel}
+                selectedPhotoInfo={this.state.selectedPhotoInfo}
                 />
                 { this.state.photos.map((pic) => (
                     <div className={styles.photoWrapper} key={pic.id}>
@@ -38,7 +56,7 @@ class Gallery extends React.Component {
                         width="400" 
                         height="600"
                         alt={pic.url}
-                        onClick={this.toggleInfoPanel}
+                        onClick={() => (this.openInfoPanel(pic))}
                         />
                     </div>
                 ))} 
