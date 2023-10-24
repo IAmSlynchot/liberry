@@ -14,7 +14,7 @@ class InfoPanel extends React.Component {
         else return (
             <div className={styles.overlay} onClick={this.props.toggle}>
                 <div className={styles.infoPanel}>
-                    <h2>Eyy look at me I'm a panel</h2>
+                    <h2>{"Eyy look at me I'm a panel"}</h2>
                     <Image
                         className={styles.galleryPhoto}
                         src={this.props.selectedPhotoInfo.src.tiny} 
@@ -22,6 +22,7 @@ class InfoPanel extends React.Component {
                         height="200"
                         alt={this.props.selectedPhotoInfo.url}
                     />
+                    <h2>Photographer: {this.props.selectedPhotoInfo.photographer}</h2>
                 </div>
             </div>
         );
