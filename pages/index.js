@@ -16,17 +16,17 @@ export default function Home({ children, data }) {
       </Head>
         <main>
             <LeftNav />
-            <Gallery photoData={photos} />
+            {/* <Gallery photoData={photos} /> */}
         </main>
       </>
   );
 }
 
 export async function getServerSideProps() {
-    const data = await getCuratedPhotos();
-    return {
-      props: {
-        data,
-      },
-    };
+    // const data = await getCuratedPhotos();
+    // return {
+    //   props: {
+    //     data,
+    //   },
+    // };
   }
