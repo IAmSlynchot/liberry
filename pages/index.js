@@ -4,10 +4,12 @@ import Head from 'next/head';
 import { LeftNav } from '../components/navigation';
 import { getCuratedPhotos } from '../lib/api';
 import Gallery from '../components/gallery';
+import "@aws-amplify/ui-react/styles.css";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ children, data }) {
+function Home({ children, data, signOut }) {
   const [photos, setPhotos] = useState(data);
   return (
       <>
@@ -15,18 +17,11 @@ export default function Home({ children, data }) {
           <title>LiBerry</title>
       </Head>
         <main>
-            <LeftNav />
+            <LeftNav signOut={signOut} />
             {/* <Gallery photoData={photos} /> */}
         </main>
       </>
   );
 }
 
-// export async function getServerSideProps() {
-//     const data = await getCuratedPhotos();
-//     return {
-//       props: {
-//         data,
-//       },
-//     };
-//   }
+export default withAuthenticator(Home);
