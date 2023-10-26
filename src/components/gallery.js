@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import InfoPanel from '../components/info-panel';
+import InfoPanel from './info-panel';
 import Image from 'next/image';
 import styles from '../styles/gallery.module.css';
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { LeftNav } from '../components/navigation';
-import { getCuratedPhotos } from '../lib/api';
+import { getCuratedPhotos } from '../../lib/api';
 import Gallery from '../components/gallery';
 import "@aws-amplify/ui-react/styles.css";
 import { withAuthenticator } from "@aws-amplify/ui-react";
