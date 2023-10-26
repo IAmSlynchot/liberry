@@ -23,7 +23,7 @@ export function LeftNav({signOut}) {
     return (
         <div className={styles.leftNav}>
             <div className={styles.menuItem}><Link href="/">Dashboard</Link></div>
-            <div className={styles.menuItem}><Link href="/">My LiBerry</Link></div>
+            <div className={styles.menuItem}><Link href="/notes">My LiBerry</Link></div>
             <div className={styles.menuItem}><Link href="/">Profile</Link></div>
             <div className={styles.menuItem}><Link href="about">About</Link></div>
             <button onClick={signOut} >Sign Out</button>
