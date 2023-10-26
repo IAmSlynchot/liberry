@@ -17,7 +17,7 @@ function Home({ children, data, signOut }) {
           <title>LiBerry</title>
       </Head>
         <main>
-            <LeftNav signOut={signOut} />
+            {/* <LeftNav signOut={signOut} /> */}
             {/* <Gallery photoData={photos} /> */}
         </main>
       </>
