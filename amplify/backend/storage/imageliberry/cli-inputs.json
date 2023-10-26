@@ -1,0 +1,14 @@
+{
+  "resourceName": "imageliberry",
+  "policyUUID": "e5f0f10f",
+  "bucketName": "liberry-image-storage-bucket",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
