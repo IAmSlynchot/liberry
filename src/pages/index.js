@@ -16,7 +16,7 @@ import {
 
 const inter = Inter({ subsets: ['latin'] })
 
-const Home = ({ children, data, signOut }) => {
+const Home = ({ children, data }) => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,6 @@ const Home = ({ children, data, signOut }) => {
 
   return (
     <View className="App">
-      <Heading level={1}>My Notes App</Heading>
       <View as="form" margin="3rem 0" onSubmit={() => createNote(event,setNotes)}>
         <Flex direction="row" justifyContent="center">
           <TextField
@@ -55,7 +54,7 @@ const Home = ({ children, data, signOut }) => {
           </Button>
         </Flex>
       </View>
-      <Heading level={2}>Current Notes</Heading>
+      <Heading level={2}>My LiBerry</Heading>
       <View margin="3rem 0">
       {notes.map((note) => (
         <Flex
@@ -81,9 +80,8 @@ const Home = ({ children, data, signOut }) => {
         </Flex>
         ))}
       </View>
-      <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
 }
 
-export default withAuthenticator(Home);
+export default Home;
