@@ -12,10 +12,13 @@ function Layout({ children, signOut }) {
     <>
       <Head>
           <link rel="icon" href="/images/berry.png" sizes="any" />
+          <title>LiBerry</title>
       </Head>
       <Navbar />
       <LeftNav signOut={signOut} />
-      {children}
+      <main>
+        {children}
+      </main>
     </>
   )
 }
