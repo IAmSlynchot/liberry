@@ -61,7 +61,7 @@ const Home = ({ children, data }) => {
   return (
     <div>
       { (showModal) ? submitModal : null }
-      <Heading level={2}>My LiBerry</Heading>
+      <h1 id="home-page-title">My LiBerry</h1>
       <View margin="3rem 0">
       {notes.map((note) => (
         <Flex
