@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Inter } from 'next/font/google';
-import { getCuratedPhotos, fetchNotes, createNote, deleteNote } from '../lib/api';
+import { fetchNotes, createNote, deleteNote } from '../lib/api';
 import Gallery from '../components/gallery';
 import "@aws-amplify/ui-react/styles.css";
 import {
