@@ -2,31 +2,24 @@ import React, { useState } from 'react';
 import styles from '../styles/gallery.module.css';
 import Image from 'next/image';
 
-class InfoPanel extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const InfoPanel = (props) => {
 
-    render() {
-        console.log("Photo info: ");
-        console.log(this.props.selectedPhotoInfo)
-        if (!this.props.visibility) return;
-        else return (
-            <div className={styles.overlay} onClick={this.props.toggle}>
-                <div className={styles.infoPanel}>
-                    <h2>{"Eyy look at me I'm a panel"}</h2>
-                    <Image
-                        className={styles.galleryPhoto}
-                        src={this.props.selectedPhotoInfo.image} 
-                        width="280" 
-                        height="200"
-                        alt={this.props.selectedPhotoInfo.description}
-                    />
-                    <h2>Name: {this.props.selectedPhotoInfo.name}</h2>
-                </div>
+    if (!props.visibility) return;
+    else return (
+        <div className={styles.overlay} onClick={props.toggle}>
+            <div className={styles.infoPanel}>
+                <h2>{"Eyy look at me I'm a panel"}</h2>
+                <Image
+                    className={styles.galleryPhoto}
+                    src={props.selectedPhotoInfo.image} 
+                    width="280" 
+                    height="200"
+                    alt={props.selectedPhotoInfo.description}
+                />
+                <h2>Name: {props.selectedPhotoInfo.name}</h2>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default InfoPanel;

@@ -20,6 +20,10 @@ const Home = ({ children, data }) => {
     fetchNotes(setNotes);
   }, []);
 
+  const handlePhotoUpdate = (() => {
+    // TODO pass updated info from gallery back to api and pass thie function to gallery as prop
+  });
+
   const submitModal = (
   <div className="overlay">
     <View as="form" margin="3rem 0" onSubmit={() => createNote(event,setNotes)}>
