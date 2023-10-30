@@ -17,12 +17,12 @@ class InfoPanel extends React.Component {
                     <h2>{"Eyy look at me I'm a panel"}</h2>
                     <Image
                         className={styles.galleryPhoto}
-                        src={this.props.selectedPhotoInfo.src.tiny} 
+                        src={this.props.selectedPhotoInfo.image} 
                         width="280" 
                         height="200"
-                        alt={this.props.selectedPhotoInfo.url}
+                        alt={this.props.selectedPhotoInfo.description}
                     />
-                    <h2>Photographer: {this.props.selectedPhotoInfo.photographer}</h2>
+                    <h2>Name: {this.props.selectedPhotoInfo.name}</h2>
                 </div>
             </div>
         );

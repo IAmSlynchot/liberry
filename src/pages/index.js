@@ -6,12 +6,8 @@ import "@aws-amplify/ui-react/styles.css";
 import {
   Button,
   Flex,
-  Heading,
-  Image,
-  Text,
   TextField,
   View,
-  withAuthenticator,
 } from '@aws-amplify/ui-react';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -57,36 +53,11 @@ const Home = ({ children, data }) => {
       </Flex>
     </View>
   </div>);
-
   return (
     <div>
       { (showModal) ? submitModal : null }
       <h1 id="home-page-title">My LiBerry</h1>
-      <View margin="3rem 0">
-      {notes.map((note) => (
-        <Flex
-            key={note.id || note.name}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-        >
-            <Text as="strong" fontWeight={700}>
-            {note.name}
-            </Text>
-            <Text as="span">{note.description}</Text>
-            {note.image && (
-            <Image
-                src={note.image}
-                alt={`visual aid for ${notes.name}`}
-                style={{ width: 400 }}
-            />
-            )}
-            <Button variation="link" onClick={() => deleteNote(note, notes, setNotes)}>
-            Delete note
-            </Button>
-        </Flex>
-        ))}
-      </View>
+      <Gallery photoData={notes} />
       <button className="addPhotos-btn" onClick={() => setShowModal(true)}>+</button>
     </div>
   );

@@ -27,7 +27,7 @@ export function LeftNav({signOut}) {
             <div className={styles.menuItem}><Link href="/" id="nav-left-home">My LiBerry</Link></div>
             <div className={styles.menuItem}><Link href="/settings" id="nav-left-settings">Settings</Link></div>
             <div className={styles.menuItem}><Link href="about" id="nav-left-about">About</Link></div>
-            <button onClick={signOut} >Sign Out</button>
+            <button onClick={signOut} id="nav-left-signOut" >Sign Out</button>
         </div>
     );
 }

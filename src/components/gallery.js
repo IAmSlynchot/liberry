@@ -8,54 +8,55 @@ class Gallery extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            infoPanelVisible: false,
-            photos: props.photoData,
-            selectedPhotoInfo: {}
-        }
 
-        this.toggleInfoPanel = this.toggleInfoPanel.bind(this);
-        this.openInfoPanel = this.openInfoPanel.bind(this);
-        this.closeInfoPanel = this.closeInfoPanel.bind(this);
+
+        // this.state = {
+        //     infoPanelVisible: false,
+        //     selectedPhotoInfo: {}
+        // }
+
+        // this.toggleInfoPanel = this.toggleInfoPanel.bind(this);
+        // this.openInfoPanel = this.openInfoPanel.bind(this);
+        // this.closeInfoPanel = this.closeInfoPanel.bind(this);
     }
 
-    toggleInfoPanel(photoData) {
-        this.setState(state => ({
-            infoPanelVisible: !state.infoPanelVisible,
-            selectedPhotoInfo: photoData
-        }));
-    }
+    // toggleInfoPanel(photoData) {
+    //     this.setState(state => ({
+    //         infoPanelVisible: !state.infoPanelVisible,
+    //         selectedPhotoInfo: photoData
+    //     }));
+    // }
 
-    openInfoPanel(photoData) {
-        this.setState({
-            infoPanelVisible: true,
-            selectedPhotoInfo: photoData
-        });
-    }
+    // openInfoPanel(photoData) {
+    //     this.setState({
+    //         infoPanelVisible: true,
+    //         selectedPhotoInfo: photoData
+    //     });
+    // }
 
-    closeInfoPanel() {
-        this.setState({
-            infoPanelVisible: false
-        });
-    }
+    // closeInfoPanel() {
+    //     this.setState({
+    //         infoPanelVisible: false
+    //     });
+    // }
 
     render() {
         return (
-            <div className={styles.galleryContainer}> 
+            <div key={this.props.photoData} className={styles.galleryContainer}> 
                 {/* {this.state.infoPanelVisible ? <InfoPanel /> : null} */}
-                <InfoPanel 
+                {/* <InfoPanel 
                 visibility={this.state.infoPanelVisible} 
                 toggle={this.closeInfoPanel}
                 selectedPhotoInfo={this.state.selectedPhotoInfo}
-                />
-                { this.state.photos.map((pic) => (
+                /> */}
+                { this.props.photoData.map((pic) => (
                     <div className={styles.photoWrapper} key={pic.id}>
                         <Image
                         className={styles.galleryPhoto}
-                        src={pic.src.portrait} 
+                        src={pic.image} 
                         width="400" 
                         height="600"
-                        alt={pic.url}
+                        alt={pic.description}
                         onClick={() => (this.openInfoPanel(pic))}
                         />
                     </div>
